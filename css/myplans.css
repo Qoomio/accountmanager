@@ -1,0 +1,191 @@
+.details-container {
+	width: 100%;
+	max-width: 1200px;
+	margin-bottom: 48px;
+}
+.details-container .details-title-container {
+	width: 100%;
+	margin-bottom: 40px;
+}
+.details-container .details-title {
+	color: var(--color-dark-navy);
+	font-size: 24px;
+	line-height: 1.5;
+	font-weight: 500;
+	margin-bottom: 16px;
+	text-transform: capitalize;
+}
+.details-container table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.details-container table tr td {
+	padding: 8px 0;
+}
+.details-container table .row-title {
+	width: 20%;
+	text-transform: capitalize;
+}
+.details-container table .row-contents {
+	width: 80%;
+}
+
+.plan-details-container {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 16px;
+}
+.plan-details-container .plan-card {
+	min-height: 424px;
+	background-color: var(--color-gray-10);
+	border-radius: 4px;
+	padding: 24px;
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+}
+.plan-details-container .plan-card > div { 
+	margin-bottom: 32px;
+}
+.plan-details-container .plan-card .plan-card-title {
+	font-weight: 500;
+	font-size: 24px;
+	color: var(--text-dark-high);
+	line-height: 1.5;
+	text-transform: capitalize;
+	text-align: center;
+	margin-bottom: 12px;
+}
+.plan-details-container .plan-card .plan-card-description {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--text-dark-high);
+	min-height: 48px;
+	text-align: center;
+}
+.plan-details-container .plan-card .plan-card-button-container {
+	
+}
+.plan-details-container .plan-card .plan-card-button-container button {
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.plan-details-container .plan-card.current-plan .plan-card-button-container button {
+	font-weight: 400;
+	background-color: #fff!important;
+	color: var(--color-secondary)!important;
+}
+.plan-details-container .plan-card .plan-card-features ul li {
+	font-weight: 300;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	line-height: 1.5;
+	margin: 12px 0;
+}
+.plan-details-container .plan-card .plan-card-features ul li > i {
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	flex-shrink: 0;
+}
+
+/* Starter Current Plan Table*/
+
+.current-plan-details > div {
+	display: grid;
+	grid-template-columns: 120px auto max-content 172px;
+	grid-column-gap: 16px;
+	align-items: center;
+	margin-bottom: 12px;
+}
+.current-plan-details > div > div:nth-child(3) {
+	color: var(--color-secondary);
+	text-align: right;
+}
+
+/* Starter Payment History */
+
+.details-container .payments > div {
+	color: var(--text-dark-high);
+	font-weight: 300;
+	line-height: 2.5;	
+	border-bottom: 1px solid var(--color-gray-10);
+	margin-left: -8px;
+	padding-left: 8px;
+}
+
+@media (max-width: 1024px) {
+	.main-container {
+		padding: 0;
+	}
+	.main-container .page-title h2 {
+		margin: 9px 0;
+	}
+	.details-container {
+		padding: 0 48px;
+	}
+	.plan-details-container {
+		grid-template-columns: 1fr;
+	}
+	.current-plan-details > div {
+		grid-template-columns: 1fr;
+		grid-row-gap: 8px;
+		align-items: center;
+		margin-bottom: 24px;
+	}
+	.current-plan-details > div > div:nth-child(3) {
+		text-align: left;
+	}
+	.current-plan-details > div > div:last-child {
+		max-width: 360px;
+	}
+}
+@media (max-width: 767px) {
+	.details-container {
+		padding: 0 24px;
+	}
+}
+
+/*=========== STARTER OPTIONS MODAL ===============*/
+
+#starterPassModal .modal-container .modal-description {
+	margin-bottom: 0;
+}
+#starterPassModal .modal-container .modal-description div {
+	margin-bottom: 0;
+}
+
+#starterPassModal table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#starterPassModal table tr td {
+	padding: 16px 8px;
+}
+#starterPassModal table tr:nth-child(2) > td {
+	border-top: 1px solid var(--color-gray-400);
+	border-bottom: 1px solid var(--color-gray-400);
+}
+#starterPassModal .pass-name {
+	width: 55%;
+	text-transform: capitalize;
+	line-height:40px;
+}
+#starterPassModal .pass-price {
+	width: 30%;
+}
+#starterPassModal .select-btn-container {
+	width: 15%;
+}
+#starterPassModal .dollar::before {
+	content: '$ ';
+}
+#starterPassModal .extra-note {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-left: 12px;
+	color: var(--color-red);
+}

@@ -1,0 +1,121 @@
+.user-info-details-container {
+	width: 100%;
+	max-width: 1200px;
+}
+.user-info-details-container a:hover {
+	background-color: var(--color-gray-10);
+}
+
+/*Account section*/
+.settings-main-container {
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 40px;
+}
+.settings-title-container {
+	width: 100%;
+	border-bottom: solid var(--color-dark-navy) 1px;
+}
+.settings-title {
+	color: var(--color-dark-navy);
+	font-size: 24px;
+	line-height: 1.5;
+	font-weight: 500;
+	margin-bottom: 16px;
+}
+.settings-content-box {
+	position: relative;
+	padding: 0 0 24px 0;
+}
+.settings-content > * {
+	margin-bottom: 16px;
+}
+.settings-content .control-account-container > div{
+	display: flex;
+	flex-flow: row nowrap;
+	column-gap: 2rem;
+	margin-bottom: 12px;
+}
+.settings-content .control-account-container > div > p:first-child {
+	width: 4rem;
+}
+
+.settings-content {
+	font-weight: 300;
+}
+.settings-content button {
+	width: fit-content;
+	width: -moz-fit-content;
+	min-width: 160px;
+}
+.settings-content .control-text {
+	color: var(--color-primary);
+	cursor: pointer;
+	margin-left: 16px;
+}
+.settings-content .control-text a {
+	text-decoration: underline;
+}
+.settings-content .control-text a:hover {
+	text-decoration: underline;
+}
+.settings-content .updated-text {
+	color: var(--color-green);
+	margin-left: 16px;
+}
+.settings-content .form-input > p {
+	margin-bottom: 8px;
+}
+.settings-content .form-input > div {
+	margin-bottom: 16px;
+}
+.settings-content .form-input .input-items input {
+	width: 50%;
+}
+.settings-content .form-input .input-items i {
+    right: calc(50% + 16px);
+}
+.settings-content .form-input .input-items input::-webkit-input-placeholder {
+	line-height: normal;
+}
+
+@media (max-width: 1024px) {
+	.main-container {
+		padding: 0;
+	}
+	.main-container .page-title {
+		z-index: 1;
+	}
+	.main-container .page-title h2 {
+		margin: 9px 0;
+	}
+	.settings-main-container {
+		margin-bottom: 20px;
+	}
+	.user-info-details-container {
+		padding: 0 16px;
+	}
+	.settings-content .form-input .input-items input {
+		width: 50%;
+	}
+}
+
+@media (max-width: 767px) {
+	.main-container .page-title {
+		margin: 0;
+	}
+	.user-info-details-container {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 16px;
+	}
+	.settings-content .form-input .input-items input {
+		width: 100%;
+	}
+	.account .settings-content .control-account-container > div > p:first-child {
+		display: none;
+	}
+	.change-password .settings-content .control-text {
+		margin-left: 0;
+	}
+}

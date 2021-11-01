@@ -1,0 +1,56 @@
+<section class='main-container' id = 'account-settings-container'>
+	<div class="page-title">
+		<div class='hamburgerIconContainer'><div class="hamburgerIcon"><i class="ic-menu white"></i></div></div>
+		<h2>My Account</h2>
+	</div>
+	<div class='user-info-details-container'>
+		<section class="settings-main-container account">
+			<div class="settings-title-container">
+				<h4 class="settings-title">Account</h4>
+			</div>
+			<div class="settings-content-box">
+				<div class="settings-content">
+					<div class="control-account-container">
+						<div>
+							<p>Name</p>
+							<p id="accountName" class="user-name">{{firstName}} {{lastName}}</p>
+							<p class="control-text"><a class="change-name">Edit</a></p>
+						</div>
+						<div>
+							<p>Email</p>
+							<p id="accountEmail" class="user-email">{{email}}</p>
+							<p class="control-text"><a class="change-email">Edit</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="settings-main-container change-password">
+			<div class="settings-title-container">
+				<h4 class="settings-title">Change Password</h4>
+			</div>
+			<div class="settings-content-box">
+				<div class="settings-content">
+					<div class="form-input">
+						<p>Current Password</p>
+						<div class="input-items default">
+							<input id="currentPassword" type="password" class="">
+							<i class='ic-eye gray-200' id='toggleCurrentPassword'></i>
+						</div>
+						<p>New Password</p>
+						<div class="input-items default">
+							<input id="password" type="password" class="">
+							<i class='ic-eye gray-200' id='togglePassword'></i>
+						</div>
+						<div class="settings-button-container">
+							<button id="updatePwBtn" class="qoom-main-btn qoom-button-full qoom-button-small">Change</button>
+						</div>
+					</div>
+					<div class="settings-forgot-password-text">
+						<span><a href="/subscribe/forgot-password">Forgot the current password?</a></span>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</section>

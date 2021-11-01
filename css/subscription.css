@@ -1,0 +1,446 @@
+/* Subscription Page CSS */
+.text-alert {
+	color: var(--color-red);
+}
+.my-domain-submenu.subscription {
+	color: var(--color-primary);
+}
+.page-section {
+	margin: 16px 0 64px;
+}
+.page-section h5 {
+	font-weight: 500;
+	margin-bottom: 16px;
+}
+.page-section .section-details {
+	background-color: var(--color-gray-10);
+	border-radius: 8px;
+	margin-left: -4px;
+	padding: 4px 16px;
+}
+.page-section table {
+	width: 100%;
+	margin: 16px 0;
+}
+.page-section  table tr td {
+	min-width: 120px;
+	padding: 4px 0;
+	vertical-align: middle;
+}
+.page-section table .toggle-container{
+	padding-bottom: 20px;
+}
+.page-section table .plan-item {
+	border-top: 0.5px solid var(--color-gray-100);
+}
+.page-section table .plan-item td {
+	padding-top: 20px;
+}
+
+.page-section table .domain-name {
+	color: var(--color-primary);
+}
+.page-section table .toggle-container span
+, .page-section table .plan-renew-info {
+	font-size: 16px;
+	font-weight: 300;
+}
+.page-section table .cancel-plan,
+.page-section table .update-payment-info {
+	border-radius: 4px;
+	color: var(--color-primary);
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 300;
+	margin-left: 16px;
+	padding: 4px 8px;
+	text-transform: uppercase;
+}
+.page-section table .cancel-plan:hover
+, .page-section table .update-payment-info:hover{
+	background-color: var(--color-gray-50);
+}
+
+.page-section table.member-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.page-section table.member-table tr {
+	border-bottom: 1px solid var(--color-gray-100);
+}
+
+.page-section table.member-table thead tr {
+	border-bottom: 1px solid var(--color-primary);
+}
+
+.page-section table.member-table th {
+	color: var(--color-primary);
+	font-size: 16px;
+	font-weight: 400;
+	padding: 8px 16px;
+	text-align: left;
+}
+
+.page-section table.member-table td {
+	font-weight: 300;
+	padding: 16px 0 16px 16px;
+	text-align: left;
+}
+
+.page-section table.member-table tr .url.preparing a {
+	cursor: default;
+	pointer-events: none;
+	color: var(--text-dark-disabled);
+}
+
+
+.page-section table.member-table tr.offline {
+	color: var(--text-dark-disable);
+}
+
+.page-section table.member-table td.actions-container {
+	position: relative;
+}
+
+.page-section table.member-table td.actions-container .ic-overflow {
+	filter: var(--ic-text-dark-high);
+	height: 24px;
+	width: 24px;
+}
+
+.page-section table.member-table td.actions-container .ic-overflow:hover {
+	cursor: pointer;
+	filter: var(--ic-primary);
+}
+
+.page-section table.member-table td.actions-container .ic-overflow.preparing {
+	cursor: not-allowed;
+	filter: var(--ic-gray-200);
+}
+
+.page-section table.member-table .actions-container .actions-background {
+	opacity: 0;
+	display: none;
+	height: 100vh;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 1;
+}
+
+.page-section table.member-table .actions-container .actions-list {
+	display: none;
+	background-color: #fff;
+	z-index: 99;
+	position: absolute;
+	right: 0;
+	padding: 16px 24px;
+	border-radius: 4px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	white-space: nowrap;
+	line-height: 2;
+	min-width: 200px;
+}
+
+.page-section table.member-table .actions {
+	font-size: 16px;
+	text-transform: capitalize;
+	margin: 8px 0;
+}
+.page-section.coding-space .section-details .description {
+	margin-top: 16px;
+}
+
+.toggle-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: -8px;
+	padding-bottom: -8px;
+	vertical-align: top;
+}
+.domain-renew-info {
+	display: inline-block;
+	width: calc(100% - 52px);
+}
+.domain-renew-cancel {
+	width: calc(100% - 48px);
+	display: none;
+}
+.domain-renew-cancel.alarm-text {
+	width: 100%;
+	margin-top: 8px;
+}
+input[type=checkbox].toggle-switch {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--color-gray-100);
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.09s ease-in-out;
+    position: relative;
+}
+input[type=checkbox].toggle-switch:checked {
+    background-color: var(--color-primary);
+}
+input[type=checkbox].toggle-switch::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    transform: scale(0.7);
+    left: 0;
+    transition: left 0.09s ease-in-out;
+}
+input[type=checkbox].toggle-switch:checked::after {
+    left: 20px;
+}
+
+.page-section table.billing-history {
+	margin-top: 32px;
+}
+.page-section table.billing-history tr th {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--text-dark-medium);
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--color-gray-100);
+	text-align: left;
+}
+.page-section table.billing-history a {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.page-section table.billing-history tr {
+	border-bottom: 1px solid var(--color-gray-100);	
+}
+.page-section table.billing-history tr td {
+	font-weight: 300;
+	padding: 16px 0;
+}
+.page-section table.billing-history .billing-date {
+	color: var(--color-primary);
+}
+
+#cancelPlanModal .modal-step-one ul {
+	list-style-type : none;
+}
+#cancelPlanModal .modal-step-one .checkbox input {
+	margin-right: 12px;
+}
+#cancelPlanModal .modal-step-one .checkbox label {
+	font-weight: 300;
+	line-height: 1.25;
+}
+#cancelPlanModal .modal-step-one .modal-highlight {
+	color: var(--color-primary);
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1.5;
+	margin-bottom: 32px;
+	margin-top: 16px;
+	text-align: center;
+}
+
+@media (max-width: 1024px) {
+	.page-section {
+		padding: 0 16px;
+	}
+	.page-section h5 {
+		font-size: 18px;
+	}
+	.page-section  table tr td {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 767px) {
+	.page-section {
+		margin-bottom: 40px;
+	}
+	.page-section h5 {
+		font-size: 16px;
+	}
+	.page-section table {
+		margin: 8px 0;
+	}
+	.page-section table tr td {
+		font-size: 14px;
+	}
+	.page-section table .toggle-container span
+	, .page-section table .plan-renew-info {
+		font-size: 14px;
+		line-height: 1.375;
+	}
+	.page-section table .cancel-plan {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.page-section table.billing-history {
+		margin-top: 0;
+	}
+	.page-section table tr {
+		display: flex;
+		flex-direction: row;
+	}
+	.page-section table.billing-history tbody tr th {
+		display: none;
+	}
+	.page-section table.billing-history tbody tr {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.page-section table.billing-history tbody tr td {
+		padding: 4px 0;
+		width: 100%;
+	}
+	.page-section table.billing-history tbody tr td:first-child {
+		padding-top: 12px;
+	}
+	.page-section table.billing-history tbody tr td:last-child {
+		padding-bottom: 12px
+	}
+}
+
+@media (max-width: 577px) {
+	#cancelPlanModal .modal-step-one .modal-highlight {
+		font-size: 20px;
+		margin-bottom: 24px;
+		margin-top: 8px;
+	}
+}
+
+.page-section .actions.takeitoffline
+, .page-section .actions.delete
+, .page-section .actions.edit
+, .page-section .actions.takeitonline
+, .page-section .actions.gotoadmin{
+	cursor: pointer;
+}
+.page-section .actions.takeitoffline:hover
+, .page-section .actions.delete:hover
+, .page-section .actions.edit:hover
+, .page-section .actions.takeitonline:hover
+, .page-section .actions.gotoadmin:hover {
+	cursor: pointer;
+}
+
+.page-section #addNew {
+	border: none;
+	border-bottom: 1px solid var(--color-gray-100);
+	color: var(--color-primary);
+	line-height: 47px;
+	text-align: center;
+	width: 100%;
+	cursor: pointer;
+}
+.page-section #addNew i {
+	width: 24px;
+	height: 24px;
+	margin-top: -1px;
+	margin-right: 16px;
+	vertical-align: middle;
+	filter: var(--ic-primary);
+}
+.page-section #addNew:hover {
+	background-color: var(--color-gray-10);
+}
+.page-section #addNew[disabled]
+,.page-section #addNew[disabled] span {
+	background: none;
+	color: var(--text-dark-disabled);
+	cursor: not-allowed;
+}
+.page-section #addNew[disabled] i {
+	filter: var(--ic-gray-400);
+}
+.modal .container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.modal .col-lg-6
+,.modal .col-lg-12 {
+	padding: 0 7.5px;
+}
+
+.modal .buttons-container {
+	margin-left: auto;
+}
+
+.modal .alertMessage {
+	color: var(--color-red);
+}
+#deleteModal .col-lg-12 {
+	padding: 0;
+}
+#deleteModal .subdomain-name {
+	color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+	.page-section table.member-table {
+		margin-left: 0;
+	}
+	.page-section table.member-table th {
+		display: none;
+	}
+	.page-section table.member-table tr {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 12px 0 8px;
+		vertical-align: middle;
+	}
+	
+	.page-section table.member-table td {
+		padding: 6px 0;
+	}
+	.page-section table.member-table tr .name {
+		font-weight: 400;
+		width: 100%;
+	}
+	.page-section table.member-table tr .email {
+		width: 100%;
+	}
+	
+	.page-section table.member-table tr .url {
+		width: 70%;
+	}
+	.page-section table.member-table tr .status {
+		text-align: right;
+		width: 30%;
+		padding-right: 12px;
+	}
+	.page-section table.member-table tr .actions {
+		max-width: 160px;
+		padding-right: 24px;
+	}
+	.page-section table.member-table .actions-container .actions-list {
+		left: 0;
+		right: auto;
+	}
+	
+	.page-section #addNew {
+		background-color: #fff;
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 577px) {
+	.col-lg-4 {
+		flex: 0 0 30%;
+	}
+}

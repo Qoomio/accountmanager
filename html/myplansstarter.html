@@ -1,0 +1,30 @@
+<div class='details-container'>
+
+	<h4 class='details-title'>Current Plan</h4>
+	<div class="current-plan-details">
+		<div>
+			<div>Plan Name</div>
+			<div>{{planTitle}}</div>
+			<div></div>
+			<div>
+				<button id="" class="qoom-main-btn qoom-button-full qoom-button-small" onclick="location.href='/subscribe/choosedomain/?sp=individual'">upgrade to pro</button>
+			</div>
+		</div>
+		<div>
+			<div>Valid</div>
+			<div>{{validDate}}</div>
+			<div>{{daysLeft}} left</div>
+			<div>
+				<button id='starterPassBtn' class="qoom-main-btn qoom-button-full qoom-button-small">extend</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='details-container'>
+	<h4 class='details-title'>Payment History</h4>
+	<div class="payments"><div>{{paymenthistory}}</div></div>
+</div>
+<script>
+	window.products = {{PRODUCTS}}
+</script>
+<script type="module" src="/accountmanager/js/myplans.js"></script>

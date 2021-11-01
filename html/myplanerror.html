@@ -1,0 +1,79 @@
+<style>
+	.sending-message-result {
+		margin-top: 16px;
+	}
+	.sending-message-result.successful {
+		color: var(--color-green);
+	}
+	.sending-message-result.unsuccessful {
+		color: var(--color-red);
+	}
+</style>
+<section class='main-container'>
+	<div class='page-title'>
+		<div class='hamburgerIconContainer'><div class="hamburgerIcon"><i class="ic-menu white"></i></div></div>
+		<h2>{{pageTitle}}</h2>
+		<!--<h2>My Plan &amp; Payment</h2>-->
+	</div>
+	<div class='details-title-container' style='display: flex; flex-direction: column'>
+		<span style='margin-bottom: 16px;'>Oops, something went wrong at our end.</span>
+		<button id='reportIssueBtn' class='qoom-main-btn qoom-button-outline qoom-button-small' style='width: 300px;'>Report Issue</button>
+	</div>
+</section>
+<script>
+	const form = document.createElement('form');
+	form.id = 'contactSupportForm';
+	form.action = 'https://{{qoomStationDomain}}/survey/reportaccountissue';
+	form.method = 'POST';
+	form.enctype = 'multipart/form-data';
+	form.style.display = 'none';
+	form.innerHTML = `
+		<input id='domain' type='hidden' name='domain' value=''>
+		<input id='errorMessage' type='hidden' name='errorMessage' value=''>
+		<input id='formSubmitBtn' type='submit' value='submit' style='display:none;'>
+	`;
+	
+	function sendUsMessage(domain, message) {
+		document.querySelector('#contactSupportForm #domain').value = domain;
+		document.querySelector('#contactSupportForm #errorMessage').value =  `Unable to open My Plan & Payment Page: ${message}`;
+		document.querySelector('#contactSupportForm #formSubmitBtn').click();
+	}
+	
+	function checkIfMessageSent() {
+		try {
+			const sp = new URLSearchParams(location.search);
+			if(!['true', 'false'].includes(sp.get('messagesent'))) return;
+	
+			if(sp.get('messagesent')) {
+				let successfulMessage = 'Thank you! Your issue has been reported.';
+				showSendingMessageResult('reportIssueBtn', successfulMessage, true);
+			} else {
+				let unsuccessfulMessage = 'Oops! Try again.';
+				showSendingMessageResult('reportIssueBtn', unsuccessfulMessage, false);
+			}
+			
+			sp.delete('messagesent');
+			const newPath = location.pathname.split('?')[0] + '?' + sp.toString();
+			window.history.pushState('', '', newPath);
+		} catch(ex) {
+			
+		}
+	}
+	
+	function showSendingMessageResult(elementId, message, successful) {
+		var $message = document.createElement('span');
+		$message.innerText = message;
+		$message.className = `sending-message-result ${ successful ? 'successful' : 'unsuccessful'}`;
+		document.getElementById(elementId).parentElement.appendChild($message);
+		setTimeout(() => {
+			document.getElementById(elementId).parentElement.removeChild($message);
+		}, 3000)
+	}
+
+	document.body.appendChild(form);
+	checkIfMessageSent();
+	document.getElementById('reportIssueBtn').addEventListener('click', () => {
+		sendUsMessage(`{{domain}}`,`{{errorMessage}}`);
+	})
+
+</script>

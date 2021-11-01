@@ -1,0 +1,104 @@
+<script src="https://js.stripe.com/v3/"></script>
+<section class='main-container' id = 'subscription-container'>
+	<div class='page-title'>
+		<div class='hamburgerIconContainer'><div class="hamburgerIcon"><i class="ic-menu white"></i></div></div>
+		<h2>My Plan &amp; Payment</h2>
+	</div>
+	<div class='page-section coding-space'>
+		<h5>Coding Space</h5>
+		<div class='section-details'>
+			<p class='description' style='display:{{displayCancel}}'>You are subscribing <span>{{planType}} plan</span> for this domain.
+				<!--You can have up to {{planSize}} active space{{plural}}.-->
+				</p>
+			<div class='description' style='display:{{displayKeep}}'><span class="plan-renew-info text-alert">Your subscription for this domain will end on {{planRenewalDate}}.</span></div>
+			<div class='description' style='display:{{displayPlanExpired}}'><span class="plan-renew-info text-alert">Your subscription expired for this domain.</span></div>
+			<table id='memberTable' class='member-table'>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>URL</th>
+						<th>Status</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<a style='display:none' target='_blank' id='takeMeToAdminPageLink'></a>
+			<div style='display:{{groupShow}}'><button id="addNew"><i class="ic-add-circle"></i><span class="actions add-new-text">Add New</span></button></div>
+		</div>
+	</div>
+	<div class='page-section plan-details'>
+		<h5>Plan Details</h5>
+		<div class="section-details">
+			<table>
+				<tbody>
+					<tr>
+						<td>Domain - <span class="domain-name">{{domain}}</span></td>
+					</tr>
+					{{domainRenewalHTML}}
+					<tr class="plan-item">
+						<td>
+							<div style='display:{{displayPlanExpired}}'><span>{{paymentCycle}}</span></div>
+		        			<div style='display:{{displayCancel}}'><span>{{paymentCycle}}</span></div>
+		        			<div style='display:{{displayKeep}}'><span>{{paymentCycle}}</span></div>
+		        			<input type='hidden' value='{{latestSubscriptionId}}' id='latestSubscriptionId'>
+		    			</td>
+					</tr>
+					<tr>
+						<td>
+		        			<div style='display:{{displayCancel}}'><span class="plan-renew-info">Your plan will be automatically renewed on {{planRenewalDate}}</span><span id='openCancelPlanModal' class="cancel-plan">Cancel Plan</span></div>
+		        			<div style='display:{{displayKeep}}'><span class="plan-renew-info text-alert">Your plan will end on {{planRenewalDate}}.</span><span id='keepMyPlanBtn' class="cancel-plan">Keep My Plan</span></div>
+		        			<div style='display:{{displayPlanExpired}}'><span class="text-alert">Your plan expired on {{planRenewalDate}}.</span></div>
+		    			</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class='page-section payment-method'>
+		<h5>Payment Method</h5>
+		<div class="section-details">
+			<table>
+				<tbody>
+					<tr>
+						<td class='payment-card-info'>{{creditCard}} <span><a id='openUpdatePaymentModal' class='update-payment-info'>Update</a></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class='page-section billing-history'>
+		<h5>Billing History</h5>
+		<table class="billing-history">
+			<tbody>
+				<tr>
+					<th>Date</th>
+					<th>Description</th>
+					<th>Payment method</th>
+					<th>Total</th>
+				</tr>
+				{{billinghistory}}
+			</tbody>
+		</table>
+	</div>
+</section>
+<script id='codingspacerow' type='text/html'>
+	<tr class="{{rowclass}}">
+		<td class="name">{{first}} {{last}}</td>
+		<td class="email">{{subdomainEmail}}</td>
+		<td class="url code {{statusclass}}"><a href="https://{{subdomain}}" target="_blank">{{subdomain}}</a></td>
+		<td class="status {{statusclass}}">
+			{{status}}<span class="{{statusclass}}">{{statusAnimation}}</span>
+		</td>
+		<td class="actions-container">
+			<i class="ic-overflow {{statusclass}}"></i>
+			<div class="actions-background"></div>
+			<ul class="actions-list">
+				<li class="actions {{actionclass1}}">{{action1}}</li>
+				<li class="actions {{actionclass2}}">{{action2}}</li>
+				<li class="actions {{actionclass3}}">{{action3}}</li>
+			</ul>
+		</td>
+	</tr>
+</script>
